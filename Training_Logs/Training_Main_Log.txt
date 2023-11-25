@@ -1,0 +1,64 @@
+2023-09-26/16:39:49		Start of Validation on files for Training
+2023-09-26/16:39:49		Creating Training_Database and tables on the basis of given schema!!!
+2023-09-26/16:39:49		Table creation Completed!!
+2023-09-26/16:39:49		Insertion of Data into Table started!!!!
+2023-10-10/10:54:49		Start of Validation on files for Training
+2023-10-10/10:54:51		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/10:54:53		Table creation Completed!!
+2023-10-10/10:54:53		Insertion of Data into Table started!!!!
+2023-10-10/10:54:57		Insertion in Table completed!!!
+2023-10-10/10:54:58		Validation Operation completed!!
+2023-10-10/10:54:59		Extracting csv file from table
+2023-10-10/18:59:12		Start of Validation on files for Training
+2023-10-10/18:59:12		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/18:59:12		Table creation Completed!!
+2023-10-10/18:59:12		Insertion of Data into Table started!!!!
+2023-10-10/19:01:56		Insertion in Table completed!!!
+2023-10-10/19:01:56		Validation Operation completed!!
+2023-10-10/19:01:56		Extracting csv file from table
+2023-10-10/19:08:00		Start of Validation on files for Training
+2023-10-10/19:08:00		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/19:08:00		Table creation Completed!!
+2023-10-10/19:08:00		Insertion of Data into Table started!!!!
+2023-10-10/19:10:22		Insertion in Table completed!!!
+2023-10-10/19:10:22		Validation Operation completed!!
+2023-10-10/19:10:22		Extracting csv file from table
+2023-10-10/19:13:04		Start of Validation on files for Training
+2023-10-10/19:13:04		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/19:13:04		Table creation Completed!!
+2023-10-10/19:13:04		Insertion of Data into Table started!!!!
+2023-10-10/19:15:19		Insertion in Table completed!!!
+2023-10-10/19:15:19		Validation Operation completed!!
+2023-10-10/19:15:19		Extracting csv file from table
+2023-10-10/19:19:27		Start of Validation on files for Training
+2023-10-10/19:19:27		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/19:19:27		Table creation Completed!!
+2023-10-10/19:19:27		Insertion of Data into Table started!!!!
+2023-10-10/19:21:37		Insertion in Table completed!!!
+2023-10-10/19:21:37		Validation Operation completed!!
+2023-10-10/19:21:37		Extracting csv file from table
+2023-10-10/19:24:07		Start of Validation on files for Training
+2023-10-10/19:24:07		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/19:24:07		Table creation Completed!!
+2023-10-10/19:24:07		Insertion of Data into Table started!!!!
+2023-10-10/19:25:38		Insertion in Table completed!!!
+2023-10-10/19:25:38		Validation Operation completed!!
+2023-10-10/19:25:38		Extracting csv file from table
+2023-10-10/19:29:57		Start of Validation on files for Training
+2023-10-10/19:29:57		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/19:29:57		Table creation Completed!!
+2023-10-10/19:29:57		Insertion of Data into Table started!!!!
+2023-10-10/19:32:35		Insertion in Table completed!!!
+2023-10-10/19:32:35		Validation Operation completed!!
+2023-10-10/19:32:35		Extracting csv file from table
+2023-10-10/19:34:40		Start of Validation on files for Training
+2023-10-10/19:34:40		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-10/19:34:40		Table creation Completed!!
+2023-10-10/19:34:40		Insertion of Data into Table started!!!!
+2023-10-10/19:36:51		Insertion in Table completed!!!
+2023-10-10/19:36:51		Validation Operation completed!!
+2023-10-10/19:36:51		Extracting csv file from table
+2023-10-25/16:15:52		Start of Validation on files for Training
+2023-10-25/16:15:52		Creating Training_Database and tables on the basis of given schema!!!
+2023-10-25/16:15:52		Table creation Completed!!
+2023-10-25/16:15:52		Insertion of Data into Table started!!!!

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Default Prediction</title>
+    <!-- <style>
+        
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin: 1em 0;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 1em 0;
+        }
+
+        form {
+            margin: 1em auto;
+            width: 50%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        input,
+        select {
+            padding: 0.5em;
+            margin-bottom: 0.5em;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        textarea {
+            padding: 0.5em;
+            margin-bottom: 0.5em;
+            border: 1px solid #ccc;
+        }
+
+        .result-container {
+            background-color: #f0f0f0;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+        }
+
+        #result {
+            width: 70%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+        }
+    </style> -->
+
+     <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4070f4;
+}
+
+.container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0px 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+}
+
+.container header::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    border-radius: 8px;
+    width: 45px;
+    background-color: #4070f4;
+}
+
+.container form {
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff
+}
+
+.container form .details {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container form .title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field{
+ display: flex;
+ flex-direction: column;
+ width:calc(100% / 5 - 15px);
+ margin : 4px 0;
+}
+
+#result{
+    width: 100%;
+    resize:none;
+}
+form .fields .input-field-status{
+    display: flex;
+    width:calc(100% / 6 - 15px);
+    flex-direction: column;
+    margin : 4px 0;
+   }
+
+.input-field,.input-field-status label{
+    font-size: 15px;
+    font-weight: 600;
+    color:#2e2e2e;
+}
+.input-field,.input-field-status input,select{
+outline:none;
+font-size: 14px;
+padding:0 15px;
+height: 30px;
+margin:8px 0;
+border:1px solid #aaa;
+border-radius: 5px;
+}
+
+.input-field,.input-field-status input,select:is(:focus,:valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container form button{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    justify-content: center;
+    height:45px;
+    max-width: 200px;
+    width:100%;
+    border: none;
+    outline: none;
+    color:#fff;
+    margin:25px ;
+    border-radius: 5px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+form button:hover{
+    background-color: #265df2;
+}
+     </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>Credit Card Default Prediction</header>
+
+        <form action="/predict" class="hello" method="POST">
+            <div class="form-first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field-status">
+                            <label for="LIMIT_BAL">LIMIT_BAL:</label>
+                            <input type="text" id="LIMIT_BAL" name="LIMIT_BAL" placeholder="Amount of given credit in NT dollars" required>
+                        </div>
+
+                        <div class="input-field-status ">
+                            <label for="AGE">AGE (in years)</label>
+                            <input type="text" id="AGE" name="AGE" placeholder="Enter your age" required>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="SEX">Gender:</label>
+                            <select id="SEX" name="SEX" required>
+                                <option value="" disable selected>Select</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="MARRIAGE">Marital Status:</label>
+                            <select id="MARRIAGE" name="MARRIAGE" required>
+                                <option value="" disable selected>Select</option>
+                                <option value="1">Married</option>
+                                <option value="2">Single</option>
+                                <option value="3">Others</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="EDUCATION">Education:</label>
+                            <select id="EDUCATION" name="EDUCATION" required>
+                                <option value="" disable selected>Select</option>
+                                <option value="1">Graduate School</option>
+                                <option value="2">University</option>
+                                <option value="3">High School</option>
+                                <option value="4">Others</option>
+                                <option value="5">Unknown</option>
+                            </select><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details repayment-status">
+                    <span class="title">Repayment Status</span>
+                    <div class="fields">
+                        <div class="input-field-status">
+                            <label for="PAY_0">PAY_1 September, 2005</label>
+                            <select id="PAY_0" name="PAY_0" required>
+                                <option value="-1">Pay Delay</option>
+                                <option value="1">Payment Delay for One Month</option>
+                                <option value="2">Payment Delay for Two Months</option>
+                                <option value="3">Payment Delay for Three Months</option>
+                                <option value="4">Payment Delay for Four Months</option>
+                                <option value="5">Payment Delay for Five Months</option>
+                                <option value="6">Payment Delay for Six Months</option>
+                                <option value="7">Payment Delay for Seven Months</option>
+                                <option value="8">Payment Delay for Eight Months</option>
+                                <option value="9">Payment Delay for Nine Months and Above</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_2">PAY_2:August, 2005</label>
+                            <select id="PAY_2" name="PAY_2" required>
+                                <option value="-1">Pay Delay</option>
+                                <option value="1">Payment Delay for One Month</option>
+                                <option value="2">Payment Delay for Two Months</option>
+                                <option value="3">Payment Delay for Three Months</option>
+                                <option value="4">Payment Delay for Four Months</option>
+                                <option value="5">Payment Delay for Five Months</option>
+                                <option value="6">Payment Delay for Six Months</option>
+                                <option value="7">Payment Delay for Seven Months</option>
+                                <option value="8">Payment Delay for Eight Months</option>
+                                <option value="9">Payment Delay for Nine Months and Above</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_3">PAY_3:July, 2005</label>
+                            <select id="PAY_3" name="PAY_3" required>
+                                <option value="-1">Pay Delay</option>
+                                <option value="1">Payment Delay for One Month</option>
+                                <option value="2">Payment Delay for Two Months</option>
+                                <option value="3">Payment Delay for Three Months</option>
+                                <option value="4">Payment Delay for Four Months</option>
+                                <option value="5">Payment Delay for Five Months</option>
+                                <option value="6">Payment Delay for Six Months</option>
+                                <option value="7">Payment Delay for Seven Months</option>
+                                <option value="8">Payment Delay for Eight Months</option>
+                                <option value="9">Payment Delay for Nine Months and Above</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_4">PAY_4:June 2005</label>
+                            <select id="PAY_4" name="PAY_4" required>
+                                <option value="-1">Pay Delay</option>
+                                <option value="1">Payment Delay for One Month</option>
+                                <option value="2">Payment Delay for Two Months</option>
+                                <option value="3">Payment Delay for Three Months</option>
+                                <option value="4">Payment Delay for Four Months</option>
+                                <option value="5">Payment Delay for Five Months</option>
+                                <option value="6">Payment Delay for Six Months</option>
+                                <option value="7">Payment Delay for Seven Months</option>
+                                <option value="8">Payment Delay for Eight Months</option>
+                                <option value="9">Payment Delay for Nine Months and Above</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_5">PAY_5:May 2005</label>
+                            <select id="PAY_5" name="PAY_5" required>
+                                <option value="-1">Pay Delay</option>
+                                <option value="1">Payment Delay for One Month</option>
+                                <option value="2">Payment Delay for Two Months</option>
+                                <option value="3">Payment Delay for Three Months</option>
+                                <option value="4">Payment Delay for Four Months</option>
+                                <option value="5">Payment Delay for Five Months</option>
+                                <option value="6">Payment Delay for Six Months</option>
+                                <option value="7">Payment Delay for Seven Months</option>
+                                <option value="8">Payment Delay for Eight Months</option>
+                                <option value="9">Payment Delay for Nine Months and Above</option>
+                            </select><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_6">PAY_6: April 2005</label>
+                            <select id="PAY_6" name="PAY_6" required>
+                                <option value="-1">Pay Delay</option>
+                                <option value="1">Payment Delay for One Month</option>
+                                <option value="2">Payment Delay for Two Months</option>
+                                <option value="3">Payment Delay for Three Months</option>
+                                <option value="4">Payment Delay for Four Months</option>
+                                <option value="5">Payment Delay for Five Months</option>
+                                <option value="6">Payment Delay for Six Months</option>
+                                <option value="7">Payment Delay for Seven Months</option>
+                                <option value="8">Payment Delay for Eight Months</option>
+                                <option value="9">Payment Delay for Nine Months and Above</option>
+                            </select><br>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="details bill-statement">
+                    <span class="title">Amount of Bill statement (in $)</span>
+                    <div class="fields">
+                        <div class="input-field-status">
+                            <label for="BILL_AMT1">September, 2005 </label>
+                            <input type="text" id="BILL_AMT1" name="BILL_AMT1" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="BILL_AMT2">August, 2005 </label>
+                            <input type="text" id="BILL_AMT2" name="BILL_AMT2" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="BILL_AMT3">July, 2005 </label>
+                            <input type="text" id="BILL_AMT3" name="BILL_AMT3" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="BILL_AMT4">June, 2005 </label>
+                            <input type="text" id="BILL_AMT4" name="BILL_AMT4" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="BILL_AMT5">May, 2005 </label>
+                            <input type="text" id="BILL_AMT5" name="BILL_AMT5" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="BILL_AMT6"> April, 2005</label>
+                            <input type="text" id="BILL_AMT6" name="BILL_AMT6" required><br>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="details previous-payment">
+                    <span class="title">Amount of Previous Payment (in $)</span>
+                    <div class="fields">
+                        <div class="input-field-status">
+                            <label for="PAY_AMT1">September 2005</label>
+                            <input type="text" id="PAY_AMT1" name="PAY_AMT1" required><br>
+
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_AMT2">August 2005 </label>
+                            <input type="text" id="PAY_AMT2" name="PAY_AMT2" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_AMT3"> July 2005 </label>
+                            <input type="text" id="PAY_AMT3" name="PAY_AMT3" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_AMT4">June 2005</label>
+                            <input type="text" id="PAY_AMT4" name="PAY_AMT4" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_AMT5"> May 2005</label>
+                            <input type="text" id="PAY_AMT5" name="PAY_AMT5" required><br>
+                        </div>
+
+                        <div class="input-field-status">
+                            <label for="PAY_AMT6"> April 2005 </label>
+                            <input type="text" id="PAY_AMT6" name="PAY_AMT6" required><br>
+                        </div>
+                    </div>
+
+                    <!-- <input type="submit" value="Submit"> -->
+
+        <!-- Clear Button -->
+    <!-- <input type="reset" value="Clear"> -->
+                    <div class="btn">
+                        <button class="submitBtn" type="submit">
+                            <span class="btnText">Submit</span>
+                        </button>
+                        <button class="resetBtn" type="reset">
+                            <span class="btnText">Reset</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <textarea id="result" name="result" rows="4" cols="50" >{{ prediction_result }}</textarea>
+    </div>
+    <!-- <h1>Credit Card Default Prediction</h1>
+    <h4>Prediction</h4>
+
+    <br> -->
+
+    <!-- <form action='/predict' method="POST">
+        <label for="LIMIT_BAL">LIMIT_BAL: Amount of given credit in NT dollars</label>
+        <input type="text" id="LIMIT_BAL" name="LIMIT_BAL"><br>
+
+        <label for="SEX">Gender:</label>
+        <select id="SEX" name="SEX">
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+        </select><br>
+
+        <label for="EDUCATION">Education:</label>
+        <select id="EDUCATION" name="EDUCATION">
+            <option value="1">Graduate School</option>
+            <option value="2">University</option>
+            <option value="3">High School</option>
+            <option value="4">Others</option>
+            <option value="5">Unknown</option>
+            <option value="6">Unknown</option>
+        </select><br>
+
+        <label for="MARRIAGE">Marital Status:</label>
+        <select id="MARRIAGE" name="MARRIAGE">
+            <option value="1">Married</option>
+            <option value="2">Single</option>
+            <option value="3">Others</option>
+        </select><br>
+
+        <label for="AGE">AGE: Age in years</label>
+        <input type="text" id="AGE" name="AGE"><br>
+
+        <label for="PAY_0">PAY_0: Repayment status in September, 2005</label>
+        <select id="PAY_0" name="PAY_0">
+            <option value="-1">Pay Duly</option>
+            <option value="1">Payment Delay for One Month</option>
+            <option value="2">Payment Delay for Two Months</option>
+            <option value="3">Payment Delay for Three Months</option>
+            <option value="4">Payment Delay for Four Months</option>
+            <option value="5">Payment Delay for Five Months</option>
+            <option value="6">Payment Delay for Six Months</option>
+            <option value="7">Payment Delay for Seven Months</option>
+            <option value="8">Payment Delay for Eight Months</option>
+            <option value="9">Payment Delay for Nine Months and Above</option>
+        </select><br>
+
+        <label for="PAY_2">PAY_2: Repayment status in August, 2005</label>
+        <select id="PAY_2" name="PAY_2">
+            <option value="-1">Pay Duly</option>
+            <option value="1">Payment Delay for One Month</option>
+            <option value="2">Payment Delay for Two Months</option>
+            <option value="3">Payment Delay for Three Months</option>
+            <option value="4">Payment Delay for Four Months</option>
+            <option value="5">Payment Delay for Five Months</option>
+            <option value="6">Payment Delay for Six Months</option>
+            <option value="7">Payment Delay for Seven Months</option>
+            <option value="8">Payment Delay for Eight Months</option>
+            <option value="9">Payment Delay for Nine Months and Above</option>
+        </select><br>
+
+        <label for="PAY_3">PAY_3: Repayment status in July, 2005</label>
+        <select id="PAY_3" name="PAY_3">
+            <option value="-1">Pay Duly</option>
+            <option value="1">Payment Delay for One Month</option>
+            <option value="2">Payment Delay for Two Months</option>
+            <option value="3">Payment Delay for Three Months</option>
+            <option value="4">Payment Delay for Four Months</option>
+            <option value="5">Payment Delay for Five Months</option>
+            <option value="6">Payment Delay for Six Months</option>
+            <option value="7">Payment Delay for Seven Months</option>
+            <option value="8">Payment Delay for Eight Months</option>
+            <option value="9">Payment Delay for Nine Months and Above</option>
+        </select><br>
+
+        <label for="PAY_4">PAY_4: Repayment status in June, 2005</label>
+        <select id="PAY_4" name="PAY_4">
+            <option value="-1">Pay Duly</option>
+            <option value="1">Payment Delay for One Month</option>
+            <option value="2">Payment Delay for Two Months</option>
+            <option value="3">Payment Delay for Three Months</option>
+            <option value="4">Payment Delay for Four Months</option>
+            <option value="5">Payment Delay for Five Months</option>
+            <option value="6">Payment Delay for Six Months</option>
+            <option value="7">Payment Delay for Seven Months</option>
+            <option value="8">Payment Delay for Eight Months</option>
+            <option value="9">Payment Delay for Nine Months and Above</option>
+        </select><br>
+
+        <label for="PAY_5">PAY_5: Repayment status in May, 2005</label>
+        <select id="PAY_5" name="PAY_5">
+            <option value="-1">Pay Duly</option>
+            <option value="1">Payment Delay for One Month</option>
+            <option value="2">Payment Delay for Two Months</option>
+            <option value="3">Payment Delay for Three Months</option>
+            <option value="4">Payment Delay for Four Months</option>
+            <option value="5">Payment Delay for Five Months</option>
+            <option value="6">Payment Delay for Six Months</option>
+            <option value="7">Payment Delay for Seven Months</option>
+            <option value="8">Payment Delay for Eight Months</option>
+            <option value="9">Payment Delay for Nine Months and Above</option>
+        </select><br>
+
+        <label for="PAY_6">PAY_6: Repayment status in April, 2005</label>
+        <select id="PAY_6" name="PAY_6">
+            <option value="-1">Pay Duly</option>
+            <option value="1">Payment Delay for One Month</option>
+            <option value="2">Payment Delay for Two Months</option>
+            <option value="3">Payment Delay for Three Months</option>
+            <option value="4">Payment Delay for Four Months</option>
+            <option value="5">Payment Delay for Five Months</option>
+            <option value="6">Payment Delay for Six Months</option>
+            <option value="7">Payment Delay for Seven Months</option>
+            <option value="8">Payment Delay for Eight Months</option>
+            <option value="9">Payment Delay for Nine Months and Above</option>
+        </select><br>
+
+        <label for="BILL_AMT1">BILL_AMT1: Amount of bill statement in September, 2005 (NT dollar)</label>
+        <input type="text" id="BILL_AMT1" name="BILL_AMT1"><br>
+
+        <label for="BILL_AMT2">BILL_AMT2: Amount of bill statement in August, 2005 (NT dollar)</label>
+        <input type="text" id="BILL_AMT2" name="BILL_AMT2"><br>
+
+        <label for="BILL_AMT3">BILL_AMT3: Amount of bill statement in July, 2005 (NT dollar)</label>
+        <input type="text" id="BILL_AMT3" name="BILL_AMT3"><br>
+
+        <label for="BILL_AMT4">BILL_AMT4: Amount of bill statement in June, 2005 (NT dollar)</label>
+        <input type="text" id="BILL_AMT4" name="BILL_AMT4"><br>
+
+        <label for="BILL_AMT5">BILL_AMT5: Amount of bill statement in May, 2005 (NT dollar)</label>
+        <input type="text" id="BILL_AMT5" name="BILL_AMT5"><br>
+
+        <label for="BILL_AMT6">BILL_AMT6: Amount of bill statement in April, 2005 (NT dollar)</label>
+        <input type="text" id="BILL_AMT6" name="BILL_AMT6"><br>
+
+        <label for="PAY_AMT1">PAY_AMT1: Amount of previous payment in September, 2005 (NT dollar)</label>
+        <input type="text" id="PAY_AMT1" name="PAY_AMT1"><br>
+
+        <label for="PAY_AMT2">PAY_AMT2: Amount of previous payment in August, 2005 (NT dollar)</label>
+        <input type="text" id="PAY_AMT2" name="PAY_AMT2"><br>
+
+        <label for="PAY_AMT3">PAY_AMT3: Amount of previous payment in July, 2005 (NT dollar)</label>
+        <input type="text" id="PAY_AMT3" name="PAY_AMT3"><br>
+
+        <label for="PAY_AMT4">PAY_AMT4: Amount of previous payment in June, 2005 (NT dollar)</label>
+        <input type="text" id="PAY_AMT4" name="PAY_AMT4"><br>
+
+        <label for="PAY_AMT5">PAY_AMT5: Amount of previous payment in May, 2005 (NT dollar)</label>
+        <input type="text" id="PAY_AMT5" name="PAY_AMT5"><br>
+
+        <label for="PAY_AMT6">PAY_AMT6: Amount of previous payment in April, 2005 (NT dollar)</label>
+        <input type="text" id="PAY_AMT6" name="PAY_AMT6"><br>
+
+        <input type="submit" value="Submit">
+
+        <!-- Clear Button -->
+    <!-- <input type="reset" value="Clear"> -->
+
+    <!-- </form> -->
+    <!-- <textarea id="result" name="result" rows="4" cols="50">{{ prediction_result }}</textarea> -->
+</body>
+
+</html>

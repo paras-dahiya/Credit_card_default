@@ -1,0 +1,9 @@
+2023-10-10/10:42:03		File exporting failed. Error : near "Raw_Data": syntax error
+2023-10-10/10:55:20		File exported successfully!!!
+2023-10-10/19:01:56		File exported successfully!!!
+2023-10-10/19:10:22		File exported successfully!!!
+2023-10-10/19:15:20		File exported successfully!!!
+2023-10-10/19:21:39		File exported successfully!!!
+2023-10-10/19:25:40		File exported successfully!!!
+2023-10-10/19:32:36		File exported successfully!!!
+2023-10-10/19:36:57		File exported successfully!!!

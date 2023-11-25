@@ -1,0 +1,175 @@
+2023-10-12/18:50:07		Entered the remove_columns method of the preprocessor class
+2023-10-12/18:50:07		Exception occured in remove_columns method of the Preprocessor class. Exception message:  "['ID'] not found in axis"
+2023-10-12/18:50:07		Column removal Unsuccessful. Exited the remove_columns method of the Preprocessor class
+2023-10-12/18:50:10		Error occured while running the prediction!! Error:: 
+2023-10-12/19:14:40		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:14:40		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:14:47		Entered the load_model method of the File_Operation class
+2023-10-12/19:14:47		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:14:58		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:14:58		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:14:59		Entered the load_model method of the File_Operation class
+2023-10-12/19:14:59		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:15:06		End of Prediction
+2023-10-12/19:17:05		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:17:05		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:17:10		Entered the load_model method of the File_Operation class
+2023-10-12/19:17:10		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:17:20		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:17:20		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:17:21		Entered the load_model method of the File_Operation class
+2023-10-12/19:17:21		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:17:29		End of Prediction
+2023-10-12/19:18:32		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:18:32		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:18:32		Entered the load_model method of the File_Operation class
+2023-10-12/19:18:32		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:18:32		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:18:32		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:18:32		Entered the load_model method of the File_Operation class
+2023-10-12/19:18:32		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:18:33		End of Prediction
+2023-10-12/19:26:49		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:26:49		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:26:49		Entered the load_model method of the File_Operation class
+2023-10-12/19:26:49		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:26:49		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:26:49		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:26:49		Entered the load_model method of the File_Operation class
+2023-10-12/19:26:49		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:26:50		End of Prediction
+2023-10-12/19:27:47		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:27:47		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:27:47		Entered the load_model method of the File_Operation class
+2023-10-12/19:27:47		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:27:47		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:27:47		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:27:47		Entered the load_model method of the File_Operation class
+2023-10-12/19:27:47		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:27:49		End of Prediction
+2023-10-12/19:29:48		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:29:48		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:29:48		Entered the load_model method of the File_Operation class
+2023-10-12/19:29:48		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:29:48		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:29:48		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:29:48		Entered the load_model method of the File_Operation class
+2023-10-12/19:29:48		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:29:49		End of Prediction
+2023-10-12/19:36:55		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:36:55		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:36:55		Entered the load_model method of the File_Operation class
+2023-10-12/19:36:55		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:36:55		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:36:55		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:36:55		Entered the load_model method of the File_Operation class
+2023-10-12/19:36:55		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:36:56		End of Prediction
+2023-10-12/19:46:40		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:46:40		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:46:40		Entered the load_model method of the File_Operation class
+2023-10-12/19:46:40		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:46:40		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:46:40		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:46:40		Entered the load_model method of the File_Operation class
+2023-10-12/19:46:40		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:46:41		End of Prediction
+2023-10-12/19:48:20		Entered the is_null_present method of the Preprocessor class
+2023-10-12/19:48:20		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-12/19:48:20		Entered the load_model method of the File_Operation class
+2023-10-12/19:48:20		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:48:20		Entered the find_correct_model_file method of the File_Operation class
+2023-10-12/19:48:20		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-12/19:48:20		Entered the load_model method of the File_Operation class
+2023-10-12/19:48:20		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-12/19:48:21		End of Prediction
+2023-10-16/19:36:15		Entered the is_null_present method of the Preprocessor class
+2023-10-16/19:36:15		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-16/19:36:15		Entered the load_model method of the File_Operation class
+2023-10-16/19:36:15		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-16/19:36:16		Entered the find_correct_model_file method of the File_Operation class
+2023-10-16/19:36:16		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-16/19:36:16		Entered the load_model method of the File_Operation class
+2023-10-16/19:36:16		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-16/19:36:17		End of Prediction
+2023-10-16/19:39:38		Entered the is_null_present method of the Preprocessor class
+2023-10-16/19:39:38		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-16/19:39:38		Entered the load_model method of the File_Operation class
+2023-10-16/19:39:38		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-16/19:39:38		Entered the find_correct_model_file method of the File_Operation class
+2023-10-16/19:39:38		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-16/19:39:38		Entered the load_model method of the File_Operation class
+2023-10-16/19:39:38		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-16/19:39:39		End of Prediction
+2023-10-16/19:40:20		Entered the is_null_present method of the Preprocessor class
+2023-10-16/19:40:20		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-16/19:40:20		Entered the load_model method of the File_Operation class
+2023-10-16/19:40:20		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-16/19:40:20		Entered the find_correct_model_file method of the File_Operation class
+2023-10-16/19:40:20		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-16/19:40:20		Entered the load_model method of the File_Operation class
+2023-10-16/19:40:20		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-16/19:40:20		End of Prediction
+2023-10-17/18:32:10		Entered the is_null_present method of the Preprocessor class
+2023-10-17/18:32:10		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-17/18:32:10		Entered the load_model method of the File_Operation class
+2023-10-17/18:32:10		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-17/18:32:10		Entered the find_correct_model_file method of the File_Operation class
+2023-10-17/18:32:10		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-17/18:32:10		Entered the load_model method of the File_Operation class
+2023-10-17/18:32:10		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-17/18:32:11		End of Prediction
+2023-10-17/18:34:07		Entered the is_null_present method of the Preprocessor class
+2023-10-17/18:34:07		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-17/18:34:07		Entered the load_model method of the File_Operation class
+2023-10-17/18:34:07		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-17/18:34:07		Entered the find_correct_model_file method of the File_Operation class
+2023-10-17/18:34:07		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-17/18:34:07		Entered the load_model method of the File_Operation class
+2023-10-17/18:34:07		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-17/18:34:07		End of Prediction
+2023-10-17/18:34:55		Entered the is_null_present method of the Preprocessor class
+2023-10-17/18:34:55		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-17/18:34:55		Entered the load_model method of the File_Operation class
+2023-10-17/18:34:55		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-17/18:34:56		Entered the find_correct_model_file method of the File_Operation class
+2023-10-17/18:34:56		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-17/18:34:56		Entered the load_model method of the File_Operation class
+2023-10-17/18:34:56		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-17/18:34:57		End of Prediction
+2023-10-18/15:05:10		Entered the is_null_present method of the Preprocessor class
+2023-10-18/15:05:10		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-18/15:05:10		Entered the load_model method of the File_Operation class
+2023-10-18/15:05:10		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-18/15:05:10		Entered the find_correct_model_file method of the File_Operation class
+2023-10-18/15:05:10		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-18/15:05:10		Entered the load_model method of the File_Operation class
+2023-10-18/15:05:10		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-18/15:05:12		End of Prediction
+2023-10-30/09:39:00		Entered the is_null_present method of the Preprocessor class
+2023-10-30/09:39:00		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-10-30/09:39:00		Entered the load_model method of the File_Operation class
+2023-10-30/09:39:00		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-10-30/09:39:01		Entered the find_correct_model_file method of the File_Operation class
+2023-10-30/09:39:01		Exited the find_correct_model_file method of the Model_Finder class.
+2023-10-30/09:39:01		Entered the load_model method of the File_Operation class
+2023-10-30/09:39:01		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-10-30/09:39:02		End of Prediction
+2023-11-25/16:56:52		Entered the is_null_present method of the Preprocessor class
+2023-11-25/16:56:52		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-11-25/16:56:52		Entered the load_model method of the File_Operation class
+2023-11-25/16:56:52		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-11-25/16:56:52		Entered the find_correct_model_file method of the File_Operation class
+2023-11-25/16:56:52		Exited the find_correct_model_file method of the Model_Finder class.
+2023-11-25/16:56:52		Entered the load_model method of the File_Operation class
+2023-11-25/16:56:52		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-11-25/16:56:53		End of Prediction
+2023-11-25/16:57:42		Entered the is_null_present method of the Preprocessor class
+2023-11-25/16:57:42		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2023-11-25/16:57:42		Entered the load_model method of the File_Operation class
+2023-11-25/16:57:42		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2023-11-25/16:57:42		Entered the find_correct_model_file method of the File_Operation class
+2023-11-25/16:57:42		Exited the find_correct_model_file method of the Model_Finder class.
+2023-11-25/16:57:42		Entered the load_model method of the File_Operation class
+2023-11-25/16:57:42		Model File XGBoost2 loaded. Exited the load_model method of the Model_Finder class
+2023-11-25/16:57:42		End of Prediction
